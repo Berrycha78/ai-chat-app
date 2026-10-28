@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'highlight.js/styles/github-dark.css';
+
+:root {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-slate-100 text-slate-900 antialiased transition-colors duration-200 dark:bg-slate-950 dark:text-slate-100;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.7) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.75);
+  border-radius: 9999px;
+}
+
+.prose {
+  @apply max-w-none text-[15px] leading-7;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  @apply mt-4 mb-2 font-semibold text-slate-900 dark:text-slate-50;
+}
+
+.prose p,
+.prose ul,
+.prose ol,
+.prose blockquote,
+.prose pre {
+  @apply my-3;
+}
+
+.prose ul,
+.prose ol {
+  @apply pl-6;
+}
+
+.prose li {
+  @apply mb-1;
+}
+
+.prose a {
+  @apply text-primary-600 underline decoration-primary-400 underline-offset-4 dark:text-primary-400;
+}
+
+.prose code {
+  @apply rounded-md bg-slate-200 px-1.5 py-0.5 text-[0.9em] text-slate-800 dark:bg-slate-800 dark:text-slate-100;
+}
+
+.prose pre {
+  @apply overflow-x-auto rounded-xl border border-slate-200 bg-slate-100 p-3 text-sm dark:border-slate-700 dark:bg-slate-900;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0 text-inherit;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-slate-300 pl-4 italic text-slate-600 dark:border-slate-700 dark:text-slate-300;
+}
+
+.prose table {
+  @apply w-full border-collapse overflow-hidden rounded-xl border border-slate-200 text-left dark:border-slate-700;
+}
+
+.prose th,
+.prose td {
+  @apply border border-slate-200 px-3 py-2 dark:border-slate-700;
+}
+
+.message-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.messaging-shell {
+  background-image: radial-gradient(circle at top left, rgba(99, 102, 241, 0.08), transparent 28%),
+    radial-gradient(circle at top right, rgba(14, 165, 233, 0.08), transparent 26%);
+}
+
+@media (max-width: 768px) {
+  .prose pre {
+    @apply text-xs;
+  }
+}
